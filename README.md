@@ -1,10 +1,62 @@
-# Pattern Problems (Striver A2Z)
+# 🚀 DSA in Python
 
-This folder contains solutions to the Pattern Problems section of Striver's A2Z DSA Sheet.
+This repository contains my solutions to the **Striver A2Z DSA Sheet** using **Python**.
 
-## Progress
+## 🎯 Goal
 
-- ⏳ Pattern 1 
-- ⏳ Pattern 2
-- ⏳ Pattern 3
-- ⏳ Pattern 4
+- Solve the complete Striver A2Z DSA Sheet
+- Improve problem-solving skills
+- Prepare for coding interviews
+- Maintain clean and well-documented solutions
+
+---
+
+## 📂 Repository Structure
+
+```
+DSA-Python
+│
+├── 01-Patterns
+├── 02-Basic Maths
+├── 03-Arrays
+├── 04-Binary Search
+├── 05-Strings
+├── 06-Linked List
+├── 07-Recursion
+├── 08-Hashing
+├── ...
+```
+
+---
+
+## 📈 Progress
+
+| Topic | Status |
+|--------|--------|
+| ⭐ Patterns | 🟡 In Progress |
+| Basic Maths | ⏳ |
+| Recursion | ⏳ |
+| Hashing | ⏳ |
+| Arrays | ⏳ |
+| Binary Search | ⏳ |
+| Strings | ⏳ |
+| Linked List | ⏳ |
+| Trees | ⏳ |
+| Graphs | ⏳ |
+| Dynamic Programming | ⏳ |
+
+---
+
+## 🛠️ Language
+
+- Python 3
+
+---
+
+## 📚 Source
+
+- Striver A2Z DSA Sheet
+
+---
+
+⭐ Feel free to explore the repository!
