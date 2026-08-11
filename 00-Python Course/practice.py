@@ -1,4 +1,8 @@
-name =input("Enter your name: ")
-age =int(input("Enter your age: "))
-print(f"Hello {name}, you are {age} years old.")
+age = 34
+print(age)
 
+name = "mohit"
+print(name)
+
+marks = 67.456
+print(marks)
