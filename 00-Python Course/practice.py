@@ -1,11 +1,4 @@
-age = 3
-print(age)
-print(type(age))
+name =input("Enter your name: ")
+age =int(input("Enter your age: "))
+print(f"Hello {name}, you are {age} years old.")
 
-no = 8.24423
-print(no)
-print(type(no))
-
-name = "mohit"
-print(name)
-print(type(name))
