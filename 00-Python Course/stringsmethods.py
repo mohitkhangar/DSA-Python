@@ -1,0 +1,1 @@
+text = "banana,apple,kiwi"
