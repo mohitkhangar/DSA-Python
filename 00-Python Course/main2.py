@@ -3,5 +3,5 @@ while True:
         a = int(input("Enter First Number: "))
         b = int(input("Enter Second Number: "))
         print(f"The Sum in {a+b}")
-    except:
-        print("Some error occured")
+    except Exception as e:
+        print("Some error occured", e)
