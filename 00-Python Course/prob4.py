@@ -1,14 +1,13 @@
-def even_only(func):
-    def wrapper(n):
-        if n % 2 == 0:
-            func(n)
-        else:
-            print("Only even numbers allowed")
-    return wrapper
+#
 
-@even_only
-def show(n):
-    print(n)
 
-show(4)
-show(5)
+
+#
+
+s = input()
+vowels = "aeiouAEIOU"
+count = 0
+for v in vowels:
+   s = s.replace(v, "*")
+print(s)
+

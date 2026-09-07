@@ -1,13 +1,5 @@
-def count_call(func):
-    count = 0
-    def wrapper():
-        nonlocal count
+s = input()
+count = 0
+for _ in s:
         count += 1
-        print("called",count,"times")
-        func()
-    return wrapper
-@count_call
-def hello():
-    print("Hello")
-hello()
-hello()
+print(count)
