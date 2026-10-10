@@ -1,0 +1,128 @@
+# 56. Merge Intervals
+
+## 📌 Problem Statement
+
+Given an array of intervals where `intervals[i] = [start, end]`, merge all overlapping intervals and return an array of non-overlapping intervals that cover all the intervals in the input.
+
+## 🧪 Examples
+
+**Example 1**
+
+```text
+Input:  intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+```
+
+**Explanation:** `[1,3]` and `[2,6]` overlap, so they merge into `[1,6]`.
+
+**Example 2**
+
+```text
+Input:  intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+```
+
+**Explanation:** Intervals that share an endpoint are considered overlapping.
+
+## 💡 Approach: Sorting + Greedy
+
+The main idea is to sort intervals by their starting points and process them from left to right.
+
+1. Sort the intervals.
+2. Create an empty list called `result`.
+3. Iterate through each interval using `start` and `end`.
+4. If `result` is empty or the current interval starts after the last merged interval ends, append the current interval.
+5. Otherwise, merge the intervals by updating the last interval's ending point.
+6. Return `result`.
+
+## 💻 Python Solution
+
+```python
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        result = []
+
+        for start, end in intervals:
+            if not result or start > result[-1][1]:
+                result.append([start, end])
+            else:
+                result[-1][1] = max(result[-1][1], end)
+
+        return result
+```
+
+## 🔍 Key Logic Explained
+
+### 1. Sorting
+
+```python
+intervals.sort()
+```
+
+Sorts intervals by their starting points so overlapping intervals can be processed consecutively.
+
+### 2. Checking for non-overlapping intervals
+
+```python
+if not result or start > result[-1][1]:
+    result.append([start, end])
+```
+
+- `not result`: No interval has been added yet.
+- `result[-1][1]`: Ending point of the last merged interval.
+- `start > result[-1][1]`: The current interval starts after the last interval ends, so add it separately.
+
+### 3. Merging overlapping intervals
+
+```python
+result[-1][1] = max(result[-1][1], end)
+```
+
+If the current interval overlaps with the last merged interval, update its ending point to the larger of the two ending values.
+
+## 📝 Dry Run
+
+Input:
+
+```text
+[[1,3],[2,6],[8,10],[15,18]]
+```
+
+| Current interval | Action | Result |
+|---|---|---|
+| `[1,3]` | Add first interval | `[[1,3]]` |
+| `[2,6]` | Merge overlapping intervals | `[[1,6]]` |
+| `[8,10]` | Add separate interval | `[[1,6],[8,10]]` |
+| `[15,18]` | Add separate interval | `[[1,6],[8,10],[15,18]]` |
+
+**Final Output:** `[[1,6],[8,10],[15,18]]`
+
+## ⏱️ Complexity Analysis
+
+- **Time Complexity:** `O(n log n)` — sorting takes `O(n log n)`, and traversing the intervals takes `O(n)`.
+- **Space Complexity:** `O(n)` for the result list. Sorting may require additional implementation-dependent space.
+
+## 🧠 Key Concepts for Revision
+
+- Sorting intervals by their starting points.
+- Detecting overlapping intervals.
+- Greedy processing from left to right.
+- Updating interval boundaries using `max()`.
+- Handling intervals that share an endpoint.
+
+## 🔑 Important Pattern
+
+**Sorting + Greedy**
+
+Whenever a problem asks you to merge overlapping ranges, consider sorting by the starting point and comparing each interval with the last merged interval.
+
+## 🔗 Related Problems
+
+- LeetCode 57 — Insert Interval
+- LeetCode 252 — Meeting Rooms
+- LeetCode 253 — Meeting Rooms II
+
+---
+
+**LeetCode Problem:** [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)
